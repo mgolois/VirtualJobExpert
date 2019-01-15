@@ -451,7 +451,7 @@ li {
 
 .breadcromb-top {
 	position: relative;
-	background: url(../img/breadcromb_bg.png) no-repeat scroll center center /cover;
+	background: url(../images/job.jpg) no-repeat scroll center center /cover;
 	z-index: 1
 }
 
@@ -3879,13 +3879,23 @@ html .ui-button.ui-state-disabled:active {
 	margin-bottom: 0
 }
 
+.recent-jobs h3 {
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    text-decoration:underline;
+}
+
 .manage-jobs-heading h3 {
-	font-size: 20px;
-	text-transform: capitalize;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	margin: 0 0 30px;
-	color: #333
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 0 0 30px;
+    color: #333
 }
 
 .manage-jobs .table thead>tr>th,

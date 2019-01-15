@@ -11,46 +11,46 @@
     <!-- Title -->
     <title>@ViewData["Title"] - VirtualJobExpert</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
     <!--Bootstrap css-->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <!--Font Awesome css-->
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <!--Magnific css-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
     <!--Owl-Carousel css-->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
     <!--Animate css-->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
     <!--Select2 css-->
-    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="/assets/css/select2.min.css">
     <!--Slicknav css-->
-    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <link rel="stylesheet" href="/assets/css/slicknav.min.css">
     <!--Bootstrap-Datepicker css-->
-    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css">
     <!--Jquery UI css-->
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
     <!--Perfect-Scrollbar css-->
-    <link rel="stylesheet" href="assets/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="/assets/css/perfect-scrollbar.min.css">
     <!--Site Main Style css-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!--Responsive css-->
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body>
 
 
     <!-- Header Area Start -->
-    <header class="jobguru-header-area stick-top forsticky">
+    <header class="jobguru-header-area stick-top forsticky @(this.Context.Request.Path == "/" ? "" : "page-header") ">
         <div class="menu-animation">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2">
                         <div class="site-logo">
-                            <a href="index.html">
-                                <img src="assets/img/logo.png" alt="jobguru" class="non-stick-logo" />
-                                <img src="assets/img/logo-2.png" alt="jobguru" class="stick-logo" />
+                            <a href="/">
+                                <img src="/assets/img/logo.png" alt="jobguru" class="non-stick-logo" />
+                                <img src="/assets/img/logo-2.png" alt="jobguru" class="stick-logo" />
                             </a>
                         </div>
                         <!-- Responsive Menu Start -->
@@ -61,58 +61,15 @@
                         <div class="header-menu">
                             <nav id="navigation">
                                 <ul id="jobguru_navigation">
-                                    <li class="active has-children">
-                                        <a href="#">home</a>
-                                        <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=" has-children">
-                                        <a href="#">for candidates</a>
-                                        <ul>
-                                            <li class="has-inner-child">
-                                                <a href="#">browse jobs</a>
-                                                <ul>
-                                                    <li><a href="browse-jobs.html">full page grid</a></li>
-                                                    <li><a href="job-grid-sidebar.html">grid sidebar</a></li>
-                                                    <li><a href="job-list-sidebar.html">list sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="browse-categories.html">Browse Categories</a></li>
-                                            <li><a href="browse-companies.html">browse companies</a></li>
-                                            <li><a href="single-candidates.html">candidates details</a></li>
-                                            <li><a href="submit-resume.html">submit resume</a></li>
-                                            <li class="has-inner-child">
-                                                <a href="#">candidate dashboard</a>
-                                                <ul>
-                                                    <li><a href="candidate-dashboard.html">Candidate dashboard</a></li>
-                                                    <li><a href="candidate-profile.html">Candidate profile</a></li>
-                                                    <li><a href="message.html">messages</a></li>
-                                                    <li><a href="manage-jobs.html">manage jobs</a></li>
-                                                    <li><a href="candidate-earnings.html">earnings</a></li>
-                                                    <li><a href="change-password.html">change password</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li class="active">
+                                        <a href="/">home</a>
                                     </li>
                                     <li class="has-children">
-                                        <a href="#">for employers</a>
+                                        <a href="#">Admin</a>
                                         <ul>
-                                            <li><a href="browse-candidates.html">Browse Candidates</a></li>
+                                            <li><a href="browse-candidates.html">Browse Jobs</a></li>
+                                            <li><a href="/admin/postjob">Post A job</a></li>
                                             <li><a href="single-company.html">company details</a></li>
-                                            <li><a href="post-job.html">Post A job</a></li>
-                                            <li class="has-inner-child">
-                                                <a href="#">employer dashboard</a>
-                                                <ul>
-                                                    <li><a href="employer-dashboard.html">employer dashboard</a></li>
-                                                    <li><a href="company-profile.html">company profile</a></li>
-                                                    <li><a href="message.html">messages</a></li>
-                                                    <li><a href="manage-candidates.html">manage candidates</a></li>
-                                                    <li><a href="transaction.html">transaction</a></li>
-                                                    <li><a href="change-password.html">change password</a></li>
-                                                </ul>
-                                            </li>
                                         </ul>
                                     </li>
                                     <li class="has-children">
@@ -139,8 +96,7 @@
                     <div class="col-lg-4">
                         <div class="header-right-menu">
                             <ul>
-                                <li><a href="post-job.html" class="post-jobs">Post jobs</a></li>
-                                <li><a href="register.html"><i class="fa fa-user"></i>sign up</a></li>
+                                <li><a href="/admin/index" class="post-jobs">Post jobs</a></li>
                                 <li><a href="login.html"><i class="fa fa-lock"></i>login</a></li>
                             </ul>
                         </div>
@@ -160,7 +116,7 @@
                         <div class="single-footer-widget">
                             <div class="footer-logo">
                                 <a href="index.html">
-                                    <img src="assets/img/logo.png" alt="jobguru logo" />
+                                    <img src="/assets/img/logo.png" alt="jobguru logo" />
                                 </a>
                             </div>
                             <p>Aliquip exa consequat dui aut repahend vouptate elit cilum fugiat pariatur lorem dolor cit amet consecter adipisic elit sea vena eiusmod nulla</p>
@@ -178,7 +134,7 @@
                             <h3>recent post</h3>
                             <div class="latest-post-footer clearfix">
                                 <div class="latest-post-footer-left">
-                                    <img src="assets/img/footer-post-2.jpg" alt="post" />
+                                    <img src="/assets/img/footer-post-2.jpg" alt="post" />
                                 </div>
                                 <div class="latest-post-footer-right">
                                     <h4><a href="#">Website design trends for 2018</a></h4>
@@ -187,7 +143,7 @@
                             </div>
                             <div class="latest-post-footer clearfix">
                                 <div class="latest-post-footer-left">
-                                    <img src="assets/img/footer-post-3.jpg" alt="post" />
+                                    <img src="/assets/img/footer-post-3.jpg" alt="post" />
                                 </div>
                                 <div class="latest-post-footer-right">
                                     <h4><a href="#">UI experts and modern designs</a></h4>
@@ -237,27 +193,27 @@
     </footer>
     <!-- Footer Area End -->
     <!--Jquery js-->
-    <script src="assets/js/jquery-3.0.0.min.js"></script>
+    <script src="/assets/js/jquery-3.0.0.min.js"></script>
     <!--Popper js-->
-    <script src="assets/js/popper.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
     <!--Bootstrap js-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
     <!--Bootstrap Datepicker js-->
-    <script src="assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="/assets/js/bootstrap-datepicker.min.js"></script>
     <!--Perfect Scrollbar js-->
-    <script src="assets/js/jquery-perfect-scrollbar.min.js"></script>
+    <script src="/assets/js/jquery-perfect-scrollbar.min.js"></script>
     <!--Owl-Carousel js-->
-    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="/assets/js/owl.carousel.min.js"></script>
     <!--SlickNav js-->
-    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <script src="/assets/js/jquery.slicknav.min.js"></script>
     <!--Magnific js-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     <!--Select2 js-->
-    <script src="assets/js/select2.min.js"></script>
+    <script src="/assets/js/select2.min.js"></script>
     <!--jquery-ui js-->
-    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
     <!--Main js-->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
     @RenderSection("Scripts", required: false)
 
 </body>
