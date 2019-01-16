@@ -4,113 +4,6 @@
     ViewData["Title"] = "Post Job";
 }
 
-@*<header class="jobguru-header-area stick-top forsticky page-header">
-        <div class="menu-animation">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="site-logo">
-                            <a href="index.html">
-                                <img src="/assets/img/logo-2.png" alt="jobguru" />
-                            </a>
-                        </div>
-                        <!-- Responsive Menu Start -->
-                        <div class="jobguru-responsive-menu"></div>
-                        <!-- Responsive Menu Start -->
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="header-menu">
-                            <nav id="navigation">
-                                <ul id="jobguru_navigation">
-                                    <li class="active has-children">
-                                        <a href="#">home</a>
-                                        <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=" has-children">
-                                        <a href="#">for candidates</a>
-                                        <ul>
-                                            <li class="has-inner-child">
-                                                <a href="#">browse jobs</a>
-                                                <ul>
-                                                    <li><a href="browse-jobs.html">full page grid</a></li>
-                                                    <li><a href="job-grid-sidebar.html">grid sidebar</a></li>
-                                                    <li><a href="job-list-sidebar.html">list sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="browse-categories.html">Browse Categories</a></li>
-                                            <li><a href="browse-companies.html">browse companies</a></li>
-                                            <li><a href="single-candidates.html">candidates details</a></li>
-                                            <li><a href="submit-resume.html">submit resume</a></li>
-                                            <li class="has-inner-child">
-                                                <a href="#">candidate dashboard</a>
-                                                <ul>
-                                                    <li><a href="candidate-dashboard.html">Candidate dashboard</a></li>
-                                                    <li><a href="candidate-profile.html">Candidate profile</a></li>
-                                                    <li><a href="message.html">messages</a></li>
-                                                    <li><a href="manage-jobs.html">manage jobs</a></li>
-                                                    <li><a href="candidate-earnings.html">earnings</a></li>
-                                                    <li><a href="change-password.html">change password</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children">
-                                        <a href="#">for employers</a>
-                                        <ul>
-                                            <li><a href="browse-candidates.html">Browse Candidates</a></li>
-                                            <li><a href="single-company.html">company details</a></li>
-                                            <li><a href="post-job.html">Post A job</a></li>
-                                            <li class="has-inner-child">
-                                                <a href="#">employer dashboard</a>
-                                                <ul>
-                                                    <li><a href="employer-dashboard.html">employer dashboard</a></li>
-                                                    <li><a href="company-profile.html">company profile</a></li>
-                                                    <li><a href="message.html">messages</a></li>
-                                                    <li><a href="manage-candidates.html">manage candidates</a></li>
-                                                    <li><a href="transaction.html">transaction</a></li>
-                                                    <li><a href="change-password.html">change password</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children">
-                                        <a href="#">pages</a>
-                                        <ul>
-                                            <li><a href="about.html">About us</a></li>
-                                            <li class="has-inner-child">
-                                                <a href="#">blog</a>
-                                                <ul>
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="job-page.html">job page</a></li>
-                                            <li><a href="login.html">login</a></li>
-                                            <li><a href="register.html">register</a></li>
-                                            <li><a href="contact.html">contact us</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="header-right-menu">
-                            <ul>
-                                <li><a href="post-job.html" class="post-jobs">Post jobs</a></li>
-                                <li><a href="register.html"><i class="fa fa-user"></i>sign up</a></li>
-                                <li><a href="login.html"><i class="fa fa-lock"></i>login</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>*@
-<!-- Header Area End -->
 <!-- Breadcromb Area Start -->
 <section class="jobguru-breadcromb-area">
     <div class="breadcromb-top section_100">
@@ -149,11 +42,12 @@
                 <div class="dashboard-left recent-jobs">
                     <h3>Recent Jobs Posted</h3>
                     <ul class="dashboard-menu">
+                        @foreach (var job in Model.RecentJobs)
+                        {
                         <li>
-                            <a href="#"> Software Engineer (Baltimore)</a>
-                            <a href="#">Staff Nurse (Hanover)</a>
-                            <a href="#">Security Officer (York)</a>
+                            <a href="#"> @job.Title (@job.CityState)</a>
                         </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -164,108 +58,99 @@
                             <h3>Post A new job</h3>
                         </div>
                         <div class="new-job-submission">
-                            <form>
+                            <form method="post">
                                 <div class="resume-box">
                                     <div class="single-resume-feild feild-flex-2">
                                         <div class="single-input">
                                             <label for="j_title">Job Title:</label>
-                                            <input type="text" id="j_title">
+                                            <input type="text" id="j_title" name="title">
                                         </div>
                                         <div class="single-input">
                                             <label for="j_status">Job Status:</label>
-                                            <select id="j_status">
+                                            <select id="j_status" name="statusId">
                                                 <option value=''>Select Status</option>
-                                                <option value="1">Open</option>
-                                                <option value="2">Closed</option>
-                                                <option value="3">Unpublished</option>
+                                                @foreach (var stat in Model.Status)
+                                                {
+                                                    <option value="@stat.Id">@stat.Status</option>
+                                                }
                                             </select>
                                         </div>
                                     </div>
                                     <div class="single-resume-feild feild-flex-2">
-                                        
+
                                         <div class="single-input">
                                             <label for="j_category">Job Category:</label>
-                                            <select id="j_category">
-                                                <option value="122">Accounting / Finance</option>
-                                                <option value="124">Automotive Jobs</option>
-                                                <option value="132">Construction / Facilities</option>
-                                                <option value="137">Design, Art & Multimedia</option>
-                                                <option value="172">Adobe Photoshop</option>
-                                                <option value="173">Animation</option>
-                                                <option value="145">Graphic Design</option>
-                                                <option value="147">Illustration</option>
-                                                <option value="150">Logo Design</option>
-                                                <option value="168">Video</option>
-                                                <option value="140">Education Training</option>
-                                                <option value="146">Healthcare</option>
-                                                <option value="157">Restaurant / Food Service</option>
-                                                <option value="159">Sales / Marketing</option>
-                                                <option value="175">Display Advertising</option>
-                                                <option value="176">Email Marketing</option>
-                                                <option value="177">Lead Generation</option>
-                                                <option value="179">Marketing Strategy</option>
-                                                <option value="180">Public Relations</option>
-                                                <option value="165">Telecommunications</option>
-                                                <option value="167">Transportation / Logistics</option>
+                                            <select id="j_category" name="categoryId">
+                                                @foreach (var cat in Model.Categories)
+                                                {
+                                                    <option value="@cat.Id">@cat.Category</option>
+                                                }
                                             </select>
                                         </div>
                                         <div class="single-input">
                                             <label for="j_type">Job Type:</label>
-                                            <select id="j_type">
-                                                <option value=''>Select Region</option>
-                                                <option value="1">Full TIme</option>
-                                                <option value="2">Freelance</option>
-                                                <option value="3">Part Time</option>
-                                                <option value="4">Internship</option>
+                                            <select id="j_type" name="typeId">
+                                                <option value=''>Select Type</option>
+                                                @foreach (var type in Model.Types)
+                                                {
+                                                    <option value="@type.Id">@type.Type</option>
+                                                }
                                             </select>
                                         </div>
                                     </div>
                                     <div class="single-resume-feild feild-flex-2">
                                         <div class="single-input">
                                             <label for="Location">City, State:</label>
-                                            <input type="text" placeholder="e.g. Baltimore, MD" id="Location">
+                                            <input type="text" placeholder="e.g. Baltimore, MD" id="Location" name="cityState">
                                         </div>
                                         <div class="single-input">
                                             <label for="j_zip">Zipcode:</label>
-                                            <input type="text" id="j_zip">
+                                            <input type="text" id="j_zip" name="zipcode">
                                         </div>
                                     </div>
 
                                     <div class="single-resume-feild feild-flex-2">
                                         <div class="single-input">
                                             <label for="j_title">Posted Date:</label>
-                                            <input type="date" id="j_title">
+                                            <input type="date" id="j_title" name="postedDate">
                                         </div>
                                         <div class="single-input">
                                             <label for="j_zip">Salary:</label>
-                                            <input type="text" id="j_salary">
+                                            <input type="text" id="j_salary" name="salary">
+                                        </div>
+                                    </div>
+                                    <div class="single-resume-feild feild-flex-2">
+                                        <div class="single-input">
+                                            <label for="j_company">Company Name:</label>
+                                            <input type="text" id="j_company" name="companyName">
+                                        </div>
+                                        <div class="single-input">
+                                            <label for="j_level">Career Lvel:</label>
+                                            <select id="j_level" name="careerLevel">
+                                                <option value=''>Select Region</option>
+                                                <option>Entry Level</option>
+                                                <option>Junior Level</option>
+                                                <option>Mid Level</option>
+                                                <option>Senior Level</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="single-resume-feild feild-flex-2">
                                         <div class="single-input">
                                             <label for="j_zip">Job Link:</label>
-                                            <input type="text" id="j_link">
+                                            <input type="text" id="j_link" name="link">
                                         </div>
                                         <div class="single-input">
                                             <label for="j_zip">Weekly Hours:</label>
-                                            <input type="text" id="j_hours">
+                                            <input type="text" id="j_hours" name="weeklyHours">
                                         </div>
                                     </div>
+
                                     <div class="single-resume-feild">
                                         <div class="single-input">
                                             <label for="j_desc">Job Description:</label>
-                                            <textarea id="j_desc"></textarea>
+                                            <textarea id="j_desc" name="description"></textarea>
                                         </div>
-                                    </div>
-                                    <div class="single-resume-feild upload_file">
-                                        <div class="product-upload">
-                                            <p>
-                                                <i class="fa fa-upload"></i>
-                                                Upload Files
-                                            </p>
-                                            <input type="file" id="w_screen">
-                                        </div>
-                                        <p>Images or documents that might be helpful in describing your job</p>
                                     </div>
                                 </div>
                                 <div class="single-input submit-resume">
