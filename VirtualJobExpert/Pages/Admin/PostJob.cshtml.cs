@@ -17,9 +17,9 @@ namespace VirtualJobExpert.Pages.Admin
         public List<JobType> Types { get; set; }
         public List<Job> RecentJobs { get; set; }
 
-        private readonly JobDbContext dbContext;
+        private readonly IJobDbContext dbContext;
         private IMemoryCache memoryCache;
-        public PostJobModel(JobDbContext ctx, IMemoryCache mCache)
+        public PostJobModel(IJobDbContext ctx, IMemoryCache mCache)
         {
             dbContext = ctx;
             memoryCache = mCache;
@@ -50,5 +50,13 @@ namespace VirtualJobExpert.Pages.Admin
         }
 
 
+    }
+
+    public class Repository<T>
+    {
+        public Repository()
+        {
+
+        }
     }
 }
