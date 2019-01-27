@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualJobExpert", "Virtual
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "VirtualJobExpert.Database", "VirtualJobExpert.Database\VirtualJobExpert.Database.sqlproj", "{2639B737-D2CA-439B-9304-05513E02C541}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualJobExpert.DataModels", "VirtualJobExpert.DataModels\VirtualJobExpert.DataModels.csproj", "{23040335-DCA6-4315-82C5-B792CA1BF938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VirtualJobExpert.DataModels", "VirtualJobExpert.DataModels\VirtualJobExpert.DataModels.csproj", "{23040335-DCA6-4315-82C5-B792CA1BF938}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{3C4C64FC-6A91-4136-9F54-FECFB492A283}"
+	ProjectSection(SolutionItems) = preProject
+		Msi-Scripts.txt = Msi-Scripts.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

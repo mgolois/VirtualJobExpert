@@ -1,0 +1,12 @@
+
+//Create a Security Group with no email access (copy the ObjectID)
+az ad group create --display-name "<Group_Name>" --mail-nickname "NotSet"
+
+//Get WebApp principal or objectId after enableMSI on webapp
+az webapp identity show -g "<Resource-Group-Name>"  -n "<WebApp-Name>"
+
+//Add WebApp to the group
+az ad group member add -g "<Group-ObjectId>" --member-id "<WebApp-ObjectId>"
+
+//
+az sql server ad-admin create --resource-group "<SQL-SERVER-RESOURCE-GROUP-NAME>" --server-name "<SQL-SERVER-NAME>" --object-id "<GROUP-OBJECTID>"

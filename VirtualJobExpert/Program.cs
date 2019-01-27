@@ -23,15 +23,6 @@ namespace VirtualJobExpert
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseApplicationInsights()
-            //.ConfigureAppConfiguration((ctx, builder) =>
-            //{
-            //    if (!ctx.HostingEnvironment.IsDevelopment())
-            //    {
-            //        var azureServiceTokenProvider = new AzureServiceTokenProvider();
-            //        var keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
-            //        builder.AddAzureKeyVault("https://virtualexpert-keyvault.vault.azure.net/", keyVaultClient, new DefaultKeyVaultSecretManager());
-            //    }
-            //})
                 .UseStartup<Startup>();
     }
 }

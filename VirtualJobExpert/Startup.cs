@@ -34,20 +34,8 @@ namespace VirtualJobExpert
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<JobDbContext>(option => option.UseSqlServer(Configuration["ConnectionString"]));
-            services.AddScoped<IJobDbContext>(sp =>
-            {
-                var dbContext = sp.GetRequiredService<JobDbContext>();
-                var env = sp.GetRequiredService<IHostingEnvironment>();
-                if (!env.IsDevelopment())
-                {
-                    var conn = (SqlConnection)dbContext.Database.GetDbConnection();
-                    conn.AccessToken = (new AzureServiceTokenProvider()).GetAccessTokenAsync("https://databse.windows.net").Result;
-                }
-                return dbContext;
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
